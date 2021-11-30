@@ -146,7 +146,7 @@ class Role(metaclass=ABCMeta):
     def __init__(self, name=None, attribute=None, belongings=[]):
         self.attribute = attribute
         self.belongings = belongings
-        self.name=  name
+        self.name = name
         # 开启扩展属性
         self.socket()
 
