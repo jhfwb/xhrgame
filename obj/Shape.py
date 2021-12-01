@@ -16,11 +16,54 @@ import math
 from abc import ABCMeta, abstractmethod
 
 
+# 这是个图形系统
+class Shape(metaclass=ABCMeta):
+    pass
+
+
+class Dot(Shape):
+    """
+    点：
+        点的形状。
+    """
+    def __init__(self, x, y, sign=None):
+        self.site = (x, y)
+        if sign is None:
+            self.__sign = str(self.site)
+        else:
+            self.__sign = sign
+        self.size = len(self.__sign)
+
+    @property
+    def sign(self):
+        return self.__sign
+
+    @sign.setter
+    def sign(self, a):
+        self.size = len(a)
+        self.__sign = a
+
+    def __str__(self):
+        return str(self.__sign)
+        # return str(' * ')
+
+
+class Line(Shape):
+    pass
+
+
+class Figure(Shape, metaclass=ABCMeta):
+    pass
+
+
 class ShapeMaker:
     pass
 
 
 class Shape(metaclass=ABCMeta):
+    def __init__(self, picture):
+        pass
+
     @abstractmethod
     def create(self):
         pass

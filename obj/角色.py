@@ -32,6 +32,26 @@
 from abc import ABCMeta, abstractmethod
 
 
+class Factory(etaclass=ABCMeta):
+    pass
+
+
+class RoleFactory(Factory):
+    pass
+
+
+class MyRoleFactory(RoleFactory):
+    pass
+
+
+class MonsterFactory(RoleFactory):
+    pass
+
+
+class EquipmentFactory(Factory):
+    pass
+
+
 class Belonging(metaclass=ABCMeta):
     @abstractmethod
     def plug(self, role):
